@@ -41,7 +41,7 @@ public class Liquido extends Produto {
 
 	@Override
 	public String toString() {
-		return " Produto: " + "Nome = " + getNome() + ", valor = R$" + getValor() + ", codigo = " + getCodigo() + " -- Especificidade: " + "gelada = " + (congelado ? "Sim" : "Não") + ", tamanho = " + quantidade + " ml, marca = " + marca;
+		return String.format("%s - Congelado: %s - quantidade: %.2f - Marca: %s", super.toString(), congelado, quantidade, marca);
 	}
 
 }

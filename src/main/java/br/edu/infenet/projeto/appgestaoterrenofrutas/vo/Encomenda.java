@@ -43,7 +43,7 @@ public class Encomenda extends Produto{
 
 	@Override
 	public String toString() {
-		return " Produto: " + "Nome = " + getNome() + ", valor = R$" + getValor() + ", codigo = " + getCodigo() + " -- Especificidade: " + "quantidade = " + quantidade + " gramas, doce = " + dataPossivelEntrega + ", informacoes = " + informacoesExtras;
+		return String.format("%s - Quantidade: %f.2 - Data Possível de entrega: %s - Informações Extras: %s", super.toString(), quantidade, dataPossivelEntrega, informacoesExtras);
 	}
 
 }

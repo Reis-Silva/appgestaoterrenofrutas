@@ -4,7 +4,7 @@ import java.util.Date;
 
 public abstract class Produto {
 
-	private String nome;
+	private String descricao;
 
 	private Float valor;
 
@@ -13,24 +13,24 @@ public abstract class Produto {
 	public Produto() {
 	}
 
-	public Produto(String nome, Float valor, Integer codigo) {
-		this.nome = nome;
+	public Produto(String descricao, Float valor, Integer codigo) {
+		this.descricao = descricao;
 		this.valor = valor;
 		this.codigo = codigo;
 	}
 	
 	public Produto(Produto produto) {
-		this.nome = produto.getNome();
+		this.descricao = produto.getDescricao();
 		this.valor = produto.getValor();
 		this.codigo = produto.getCodigo();
 	}
 
-	public String getNome() {
-		return nome;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Float getValor() {
@@ -47,6 +47,11 @@ public abstract class Produto {
 
 	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Descrição: %s - Valor: %.2f - Codigo: %d", descricao, valor, codigo);
 	}
 	
 	public static String buscarSaudacaoAtual() {

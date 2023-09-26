@@ -43,7 +43,7 @@ public class Fruta extends Produto{
 
 	@Override
 	public String toString() {
-		return " Produto: " + "Nome = " + getNome() + ", valor = R$" + getValor() + ", codigo = " + getCodigo() + " -- Especificidade: " + "peso = " + peso + " gramas, vegano = "+ (pacote ? "Sim" : "Não") + ", ingredientes = " + validade;
+		return String.format("%s - Peso: %.2f - Pacote: %s - Validade: %s", super.toString(), peso, pacote, validade);
 	}
 
 }

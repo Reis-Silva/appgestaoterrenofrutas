@@ -1,26 +1,40 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Pedido {
+public class  Pedido {
 
-	private String descricao;
+	private String informacao;
 
 	private LocalDateTime data;
 
 	private boolean web;
-	
-	public Pedido(String descricao) {
-		this.descricao = descricao;
-		this.data = LocalDateTime.now();	
+
+	private Cliente cliente;
+
+	private List<Produto> produtoList;
+
+	public Pedido(String informacao) {
+		this.informacao = informacao;
+		this.data = LocalDateTime.now();
+		this.web = true;
+	}
+	public Pedido(String informacao, Cliente cliente, ArrayList<Produto> produtoList) {
+		this.informacao = informacao;
+		this.data = LocalDateTime.now();
+		this.web = true;
+		this.cliente = cliente;
+		this.produtoList = produtoList;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getInformacao() {
+		return informacao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setInformacao(String informacao) {
+		this.informacao = informacao;
 	}
 
 	public LocalDateTime getData() {
@@ -39,8 +53,24 @@ public class Pedido {
 		this.web = web;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public List<Produto> getProdutoList() {
+		return produtoList;
+	}
+
+	public void setProdutoList(List<Produto> produtoList) {
+		this.produtoList = produtoList;
+	}
+
 	@Override
 	public String toString() {
-		return "descricao = " + descricao + ", data = " + data + ", web = " + (web ? "Sim" : "Não");
+		return String.format("%s - Informação: %s - Data do Pedido: %s - Web: %s", cliente.toString(), informacao, data, web, produtoList.size());
 	}
 }

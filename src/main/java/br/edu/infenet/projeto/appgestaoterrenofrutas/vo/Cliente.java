@@ -37,9 +37,10 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public Pedido obterPedido(String descricaoMesa) {
-		return new Pedido(descricaoMesa);
+
+	@Override
+	public String toString() {
+		return String.format("Nome: %s - CPF: %s - Email: %s", nome, cpf, email);
 	}
 
 }
