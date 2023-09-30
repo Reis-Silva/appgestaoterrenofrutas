@@ -1,6 +1,6 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
-public class Liquido extends Produto {
+public class Polpa extends Produto {
 
 	private boolean congelado;
 
@@ -8,7 +8,7 @@ public class Liquido extends Produto {
 
 	private String marca;
 
-	public Liquido(boolean congelado, Float tamanho, String marca, String nome, Float valor, Integer codigo) {
+	public Polpa(boolean congelado, Float tamanho, String marca, String nome, Float valor, Integer codigo) {
 		super(nome, valor, codigo);
 		this.congelado = congelado;
 		this.quantidade = tamanho;

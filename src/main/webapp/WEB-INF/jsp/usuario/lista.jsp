@@ -9,32 +9,28 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
     <body>
-        <c:import url="/WEB-INF/jsp/menu.jsp"></c:import>
+         <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
         <div class="container-fluid mt-3">
-            <h3>Listagem de solicitantes:</h3>
-            <h4><a href="/cliente/cadastro">Novo</a></h4>
+            <h3>Listagem de usuários:</h3>
 
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>CPF</th>
                         <th>E-mail</th>
-                        <th>Usuário</th>
-                        <th></th>
+                        <th>Senha</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="s" items="${listaSolicitante}">
+                    <c:forEach var="u" items="${listaUsuario}">
                         <tr>
-                            <td>${s.id}</td>
-                            <td>${s.nome}</td>
-                            <td>${s.cpf}</td>
-                            <td>${s.email}</td>
-                            <td>${s.usuario.nome}</td>
-                            <td><a href="/solicitante/${s.id}/excluir">excluir</a> </td>
+                            <td>${u.id}</td>
+                            <td>${u.nome}</td>
+                            <td>${u.email}</td>
+                            <td>${u.senha}</td>
+                            <td><a href="/usuario/${u.id}/excluir">excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

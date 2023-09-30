@@ -1,9 +1,13 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.controller;
 
+import br.edu.infenet.projeto.appgestaoterrenofrutas.service.ClienteService;
 import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Cliente;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +15,8 @@ import java.util.List;
 @Controller
 public class ClienteController {
 
-    private List<Cliente> clientes;
+    @Autowired
+    private ClienteService clienteService;
 
     @GetMapping(value = "/cliente/lista")
     public String telaCliente(Model model) {
@@ -25,5 +30,27 @@ public class ClienteController {
         model.addAttribute("listaCliente", clientes);
 
         return "cliente/lista";
+    }
+
+    @GetMapping(value = "/cliente/cadastro")
+    public String telaCadastro() {
+
+        return "cliente/cadastro";
+    }
+
+    @PostMapping(value = "/cliente/incluir")
+    public String incluir(Cliente cliente) {
+
+        clienteService.incluir(cliente);
+
+        return "redirect:/cliente/lista";
+    }
+
+    @GetMapping(value = "/cliente/{id}/excluir")
+    public String excluir(@PathVariable Integer id) {
+
+        clienteService.excluir(id);
+
+        return "redirect:/cliente /lista";
     }
 }

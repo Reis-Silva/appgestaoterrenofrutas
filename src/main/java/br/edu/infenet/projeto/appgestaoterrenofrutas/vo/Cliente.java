@@ -1,19 +1,36 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
+import javax.persistence.*;
+
+@Entity
 public class Cliente {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
+	private Long id;
 
 	private String nome;
 
 	private String cpf;
 
 	private String email;
-	
+
+	public Cliente() {
+	}
 	public Cliente(String nome, String cpf, String email) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
