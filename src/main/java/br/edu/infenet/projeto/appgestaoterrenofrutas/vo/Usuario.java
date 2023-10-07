@@ -1,21 +1,30 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Table(name = "tbl_usuario")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
     private String nome;
     private String email;
     private String senha;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Cliente> clientes;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Pedido> pedidos;
+    @OneToMany
+    @JoinColumn(name = "idUsuario")
+    private List<Produto> produtos;
 
     public Usuario() {
-
     }
 
     public Long getId() {
@@ -48,5 +57,29 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
     }
 }

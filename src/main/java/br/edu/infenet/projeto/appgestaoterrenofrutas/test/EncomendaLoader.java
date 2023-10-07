@@ -15,9 +15,9 @@ public class EncomendaLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		List<Encomenda> encomendas = new ArrayList<Encomenda>();
-		encomendas.add(new Encomenda(150f, LocalDateTime.now().plusDays(10), "Sorvete de Ovo Maltine", "Leite condesado com Chocolate e creme de leite", 8.00f, 7));
-		encomendas.add(new Encomenda(300f, LocalDateTime.now().plusDays(10), "Empadão", "Frango com massa de trigo e legumes", 10.0f, 8));
-		encomendas.add(new Encomenda(300f, LocalDateTime.now().plusDays(10), "Torta Doce", "Chocolate com pedaços de biscoito e amora", 10.00f, 9));
+		encomendas.add(new Encomenda(150f, LocalDateTime.now().plusDays(10), "Sorvete de Ovo Maltine", "Leite condesado com Chocolate e creme de leite", 8.00f, 7L));
+		encomendas.add(new Encomenda(300f, LocalDateTime.now().plusDays(10), "Empadão", "Frango com massa de trigo e legumes", 10.0f, 8L));
+		encomendas.add(new Encomenda(300f, LocalDateTime.now().plusDays(10), "Torta Doce", "Chocolate com pedaços de biscoito e amora", 10.00f, 9L));
 
 		System.out.println("Pedido Solicitado: \n");
 

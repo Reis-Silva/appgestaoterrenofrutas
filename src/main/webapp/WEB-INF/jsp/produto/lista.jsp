@@ -29,14 +29,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="p" items="${listaProduto}">
+                    <c:forEach var="f" items="${listaProduto}">
                         <tr>
-                            <td>${p.id}</td>
-                            <td>${p.nome}</td>
-                            <td>${p.valor}</td>
-                            <td>${p.codigo}</td>
-                            <td>${p.pedidos.size()}</td>
-                            <td><a href="/produto/${p.id}/excluir">excluir</a> </td>
+                            <td>${f.id}</td>
+                            <td>${f.nome}</td>
+                            <td>${f.valor}</td>
+                            <td>${f.codigo}</td>
+                            <td>${f.pedidos.size()}</td>
+                            <td><a href="/produto/${f.id}/excluir">excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

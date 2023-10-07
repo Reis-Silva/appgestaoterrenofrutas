@@ -1,20 +1,31 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "tbl_pedido")
 public class  Pedido {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String informacao;
-
 	private LocalDateTime data;
-
 	private boolean web;
-
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
-
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Produto> produtoList;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+
+	public Pedido() {
+	}
 
 	public Pedido(String informacao) {
 		this.informacao = informacao;
@@ -27,6 +38,14 @@ public class  Pedido {
 		this.web = true;
 		this.cliente = cliente;
 		this.produtoList = produtoList;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getInformacao() {
@@ -67,6 +86,14 @@ public class  Pedido {
 
 	public void setProdutoList(List<Produto> produtoList) {
 		this.produtoList = produtoList;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override

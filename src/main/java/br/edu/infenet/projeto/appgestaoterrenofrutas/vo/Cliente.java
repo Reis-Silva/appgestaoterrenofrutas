@@ -3,6 +3,7 @@ package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "tbl_cliente")
 public class Cliente {
 
 	@Id
@@ -15,7 +16,9 @@ public class Cliente {
 	private String cpf;
 
 	private String email;
-
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
+	private  Usuario usuario;
 	public Cliente() {
 	}
 	public Cliente(String nome, String cpf, String email) {
@@ -53,6 +56,14 @@ public class Cliente {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override

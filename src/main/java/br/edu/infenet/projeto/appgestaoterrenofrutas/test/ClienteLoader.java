@@ -1,17 +1,14 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.test;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Fruta;
-import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Pedido;
-import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Produto;
 import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Cliente;
+import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Produto;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Order(4)
 @Component

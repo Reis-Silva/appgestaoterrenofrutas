@@ -14,9 +14,9 @@ public class PolpaLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		List<Polpa> polpas = new ArrayList<Polpa>();
-		polpas.add(new Polpa(true, 350f, "Coca-Cola", "Refrigerante", 4.50f, 1));
-		polpas.add(new Polpa(false, 50f, "Jack Daniels Old 7", "Whisky", 20.0f, 2));
-		polpas.add(new Polpa(true, 350f, "RedBull", "Energético", 10.00f, 3));
+		polpas.add(new Polpa(true, 350f, "Coca-Cola", "Refrigerante", 4.50f, 1L));
+		polpas.add(new Polpa(false, 50f, "Jack Daniels Old 7", "Whisky", 20.0f, 2L));
+		polpas.add(new Polpa(true, 350f, "RedBull", "Energético", 10.00f, 3L));
 
 		System.out.println(Polpa.buscarSaudacaoAtual());
 

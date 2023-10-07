@@ -5,18 +5,44 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>appgestaoterrenofrutas</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
     <body>
-        <c:import url="/WEB-INF/jsp/menu.jsp"></c:import>
+        <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
         <div class="container-fluid mt-3">
-            <h3>Fruta</h3>
-            <p>Lista de Frutas</p>
+            <h3>Listagem de Frutas:</h3>
+            <h4><a href="/fruta/cadastro">Nova Fruta</a></h4>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Código</th>
+                        <th>Peso</th>
+                        <th>Pacote</th>
+                        <th>Validade</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="f" items="${listaFruta}">
+                        <tr>
+                            <td>${f.id}</td>
+                            <td>${f.nome}</td>
+                            <td>${f.valor}</td>
+                            <td>${f.codigo}</td>
+                            <td>${f.peso}</td>
+                            <td>${f.pacote}</td>
+                            <td>${f.validade}</td>
+                            <td><a href="/fruta/${f.id}/excluir">excluir</a> </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>

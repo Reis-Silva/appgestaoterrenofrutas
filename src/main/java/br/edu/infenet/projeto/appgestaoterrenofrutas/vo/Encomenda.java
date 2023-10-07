@@ -1,7 +1,11 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tbl_encomenda")
 public class Encomenda extends Produto{
 
 	private Float quantidade;
@@ -9,12 +13,18 @@ public class Encomenda extends Produto{
 	private LocalDateTime dataPossivelEntrega;
 
 	private String informacoesExtras;
-	
-	public Encomenda(Float quantidade, LocalDateTime dataPossivelEntrega, String informacoesExtras, String nome, Float valor, Integer codigo) {
+
+	public Encomenda() {
+	}
+
+	public Encomenda(Float quantidade, LocalDateTime dataPossivelEntrega, String informacoesExtras, String nome, Float valor, Long codigo) {
 		super(nome, valor, codigo);
 		this.quantidade = quantidade;
 		this.dataPossivelEntrega = dataPossivelEntrega;
 		this.informacoesExtras = informacoesExtras;
+	}
+	public Encomenda(Long id) {
+		super(id);
 	}
 
 	public Float getQuantidade() {

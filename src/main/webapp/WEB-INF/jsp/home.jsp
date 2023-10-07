@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java"  contentType="text/html; UTF-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 
         <div class="container-fluid mt-3">
             <h3>appgestaoterrenofrutas</h3>
-            <p>Projeto de Gestão de Pedidos para um Terreno de produção de Frutas.</p>
+            <p>Projeto de GestÃ£o de Pedidos para um Terreno de produÃ§Ã£o de Frutas.</p>
         </div>
     </body>
 </html>

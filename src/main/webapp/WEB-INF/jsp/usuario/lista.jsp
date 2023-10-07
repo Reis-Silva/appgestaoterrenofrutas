@@ -30,6 +30,7 @@
                             <td>${u.nome}</td>
                             <td>${u.email}</td>
                             <td>${u.senha}</td>
+                            <td>${u.clientes.size()}</td>
                             <td><a href="/usuario/${u.id}/excluir">excluir</a> </td>
                         </tr>
                     </c:forEach>

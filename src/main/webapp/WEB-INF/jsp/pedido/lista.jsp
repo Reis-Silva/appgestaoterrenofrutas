@@ -13,6 +13,7 @@
 
         <div class="container-fluid mt-3">
             <h3>Listagem de Pedidos:</h3>
+            <h4><a href="/pedido">Novo Pedido</a></h4>
 
             <table class="table table-striped">
                 <thead>
@@ -27,15 +28,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="p" items="${listaPedido}">
+                    <c:forEach var="f" items="${listaPedido}">
                         <tr>
-                            <td>${p.id}</td>
-                            <td>${p.descricao}</td>
-                            <td>${p.data}</td>
-                            <td>${p.web}</td>
-                            <td>${p.solicitante}</td>
-                            <td>${p.produtos}</td>
-                            <td><a href="/pedido/${p.id}/excluir">excluir</a> </td>
+                            <td>${f.id}</td>
+                            <td>${f.descricao}</td>
+                            <td>${f.data}</td>
+                            <td>${f.web}</td>
+                            <td>${f.solicitante}</td>
+                            <td>${f.produtos}</td>
+                            <td><a href="/pedido/${f.id}/excluir">excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

@@ -1,7 +1,11 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tbl_fruta")
 public class Fruta extends Produto{
 
 	private Float peso;
@@ -9,8 +13,11 @@ public class Fruta extends Produto{
 	private boolean pacote;
 
 	private LocalDateTime validade;
+
+	public Fruta() {
+	}
 	
-	public Fruta(Float peso, boolean pacote, LocalDateTime validade, String nome, Float valor, Integer codigo) {
+	public Fruta(Float peso, boolean pacote, LocalDateTime validade, String nome, Float valor, Long codigo) {
 		super(nome, valor, codigo);
 		this.peso = peso;
 		this.pacote = pacote;

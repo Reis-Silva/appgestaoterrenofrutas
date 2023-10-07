@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @SessionAttributes("user")
 @Controller
 public class UsuarioController {
+
     @Autowired
     private UsuarioService usuarioService;
 

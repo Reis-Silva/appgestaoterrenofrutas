@@ -21,9 +21,9 @@ public class PedidoLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 
 		List<Produto> produtoList = new ArrayList<>();
-		produtoList.add(new Fruta(350f, true, LocalDateTime.now().plusDays(10), "Tomate, Cebola, Pepino, alface, Manga, Batata Doce", 15.50f, 4));
-		produtoList.add(new Fruta(800f, false, LocalDateTime.now().plusDays(10), "Arroz Pasterizado, Peito de frango com molho Barbecue e alho Imerso ao queijo", 20.0f, 5));
-		produtoList.add(new Fruta(600f, false, LocalDateTime.now().plusDays(10), "Molho mexicano com Carne de Filé em tiras e Carne de Porco ao molho Italiano", 50.00f, 6));
+		produtoList.add(new Fruta(350f, true, LocalDateTime.now().plusDays(10), "Tomate, Cebola, Pepino, alface, Manga, Batata Doce", 15.50f, 4L));
+		produtoList.add(new Fruta(800f, false, LocalDateTime.now().plusDays(10), "Arroz Pasterizado, Peito de frango com molho Barbecue e alho Imerso ao queijo", 20.0f, 5L));
+		produtoList.add(new Fruta(600f, false, LocalDateTime.now().plusDays(10), "Molho mexicano com Carne de Filé em tiras e Carne de Porco ao molho Italiano", 50.00f, 6L));
 
 		Pedido pedido = new Pedido("Pedido 1", new Cliente("Julio", "00000000001", "teste1@gmail.com"), (ArrayList<Produto>) produtoList);
 

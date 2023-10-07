@@ -12,8 +12,8 @@
         <c:import url="/WEB-INF/jsp/menu.jsp"></c:import>
 
         <div class="container-fluid mt-3">
-            <h3>Listagem de solicitantes:</h3>
-            <h4><a href="/cliente/cadastro">Novo</a></h4>
+            <h3>Listagem de Clientes:</h3>
+            <h4><a href="/cliente/cadastro">Novo Cliente</a></h4>
 
             <table class="table table-striped">
                 <thead>
@@ -27,14 +27,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="s" items="${listaSolicitante}">
+                    <c:forEach var="s" items="${listagemCliente}">
                         <tr>
                             <td>${s.id}</td>
                             <td>${s.nome}</td>
                             <td>${s.cpf}</td>
                             <td>${s.email}</td>
                             <td>${s.usuario.nome}</td>
-                            <td><a href="/solicitante/${s.id}/excluir">excluir</a> </td>
+                            <td><a href="/cliente/${s.id}/excluir">excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

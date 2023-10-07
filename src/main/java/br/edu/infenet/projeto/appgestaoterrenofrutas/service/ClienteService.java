@@ -2,6 +2,7 @@ package br.edu.infenet.projeto.appgestaoterrenofrutas.service;
 
 import br.edu.infenet.projeto.appgestaoterrenofrutas.repository.ClienteRepository;
 import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Cliente;
+import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +19,17 @@ public class ClienteService {
         return (Collection<Cliente>) clienteRepository.findAll();
     }
 
+    public Collection<Cliente> obterLista(Usuario usuario){
+
+        return (Collection<Cliente>) clienteRepository.obterLista(usuario.getId());
+    }
+
     public void incluir(Cliente solicitante) {
 
         clienteRepository.save(solicitante);
     }
 
-    public void excluir(Integer id) {
+    public void excluir(Long id) {
 
         clienteRepository.deleteById(id);
     }

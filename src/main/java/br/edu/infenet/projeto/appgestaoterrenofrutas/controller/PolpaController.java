@@ -1,45 +1,50 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.controller;
 
+import br.edu.infenet.projeto.appgestaoterrenofrutas.service.PolpaService;
 import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Polpa;
+import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class PolpaController {
 
-    private Map<Integer, Polpa> mapaPolpa = new HashMap<Integer, Polpa>();
-
-    public Collection<Polpa> obterLista(){
-        return mapaPolpa.values();
-    }
-
-    public void incluir(Polpa polpa) {
-        mapaPolpa.put(polpa.getCodigo(), polpa);
-        System.out.println("[Polpa] Inclusão realizada com sucesso: " + polpa);
-    }
-
-    public void excluir(int codigo) {
-        mapaPolpa.remove(codigo);
-    }
+    @Autowired
+    private PolpaService polpaService;
 
     @GetMapping(value = "/polpa/lista")
-    public String telaLista(Model model) {
+    public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
-        model.addAttribute("listaPolpa", obterLista());
+        model.addAttribute("listaPolpa", polpaService.obterLista(usuario));
 
         return "polpa/lista";
     }
 
-    @GetMapping(value = "/polpa/{codigo}/excluir")
-    public String exclusao(@PathVariable int codigo) {
+    @GetMapping(value = "/polpa/cadastro")
+    public String telaCadastro() {
 
-        excluir(codigo);
+        return "polpa/cadastro";
+    }
+
+    @PostMapping(value = "/polpa/incluir")
+    public String incluir(Polpa polpa, @SessionAttribute("user") Usuario usuario) {
+
+        polpa.setUsuario(usuario);
+
+        polpaService.incluir(polpa);
+
+        return "redirect:/polpa/lista";
+    }
+
+    @GetMapping(value = "/polpa/{id}/excluir")
+    public String exclusao(@PathVariable Long id) {
+
+        polpaService.excluir(id);
 
         return "redirect:/polpa/lista";
     }

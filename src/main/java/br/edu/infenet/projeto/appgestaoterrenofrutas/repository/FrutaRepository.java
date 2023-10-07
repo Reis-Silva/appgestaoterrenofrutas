@@ -1,6 +1,6 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.repository;
 
-import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Cliente;
+import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Fruta;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ClienteRepository extends CrudRepository<Cliente, Long> {
-    @Query("from Cliente c where c.usuario.id = :userid")
-    public List<Cliente> obterLista(Long userid);
+public interface FrutaRepository extends CrudRepository<Fruta, Long> {
+    @Query("from Fruta f where f.usuario.id = :userid")
+    public List<Fruta> obterLista(Long userid);
 }

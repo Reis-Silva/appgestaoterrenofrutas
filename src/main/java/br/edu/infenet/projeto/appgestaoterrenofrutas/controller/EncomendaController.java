@@ -1,45 +1,50 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.controller;
 
+import br.edu.infenet.projeto.appgestaoterrenofrutas.service.EncomendaService;
 import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Encomenda;
+import br.edu.infenet.projeto.appgestaoterrenofrutas.vo.Usuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class EncomendaController {
 
-    private Map<Integer, Encomenda> mapaEncomenda = new HashMap<Integer, Encomenda>();
-
-    public Collection<Encomenda> obterLista(){
-        return mapaEncomenda.values();
-    }
-
-    public void incluir(Encomenda encomenda) {
-        mapaEncomenda.put(encomenda.getCodigo(), encomenda);
-        System.out.println("[Encomenda] Inclusão realizada com sucesso: " + encomenda);
-    }
-
-    public void excluir(int codigo) {
-        mapaEncomenda.remove(codigo);
-    }
+    @Autowired
+    private EncomendaService encomendaService;
 
     @GetMapping(value = "/encomenda/lista")
-    public String telaLista(Model model) {
+    public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 
-        model.addAttribute("listaEncomenda", obterLista());
+        model.addAttribute("listaEncomenda", encomendaService.obterLista(usuario));
 
         return "encomenda/lista";
     }
 
-    @GetMapping(value = "/encomenda/{codigo}/excluir")
-    public String exclusao(@PathVariable int codigo) {
+    @GetMapping(value = "/encomenda/cadastro")
+    public String telaCadastro() {
 
-        excluir(codigo);
+        return "encomenda/cadastro";
+    }
+
+    @PostMapping(value = "/encomenda/incluir")
+    public String incluir(Encomenda encomenda, @SessionAttribute("user") Usuario usuario) {
+
+        encomenda.setUsuario(usuario);
+
+        encomendaService.incluir(encomenda);
+
+        return "redirect:/encomenda/lista";
+    }
+
+    @GetMapping(value = "/encomenda/{id}/excluir")
+    public String exclusao(@PathVariable Long id) {
+
+        encomendaService.excluir(id);
 
         return "redirect:/encomenda/lista";
     }

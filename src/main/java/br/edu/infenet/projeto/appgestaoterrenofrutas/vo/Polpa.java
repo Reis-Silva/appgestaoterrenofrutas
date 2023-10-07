@@ -1,47 +1,58 @@
 package br.edu.infenet.projeto.appgestaoterrenofrutas.vo;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tbl_polpa")
 public class Polpa extends Produto {
 
-	private boolean congelado;
+    private boolean congelado;
 
-	private Float quantidade;
+    private Float quantidade;
 
-	private String marca;
+    private String marca;
 
-	public Polpa(boolean congelado, Float tamanho, String marca, String nome, Float valor, Integer codigo) {
-		super(nome, valor, codigo);
-		this.congelado = congelado;
-		this.quantidade = tamanho;
-		this.marca = marca;
-	}
+    public Polpa() {
+    }
 
-	public boolean isCongelado() {
-		return congelado;
-	}
+    public Polpa(boolean congelado, Float tamanho, String marca, String nome, Float valor, Long codigo) {
+        super(nome, valor, codigo);
+        this.congelado = congelado;
+        this.quantidade = tamanho;
+        this.marca = marca;
+    }
 
-	public void setCongelado(boolean congelado) {
-		this.congelado = congelado;
-	}
+    public Polpa(Long id) {
+        super(id);
+    }
 
-	public Float getQuantidade() {
-		return quantidade;
-	}
+    public boolean isCongelado() {
+        return congelado;
+    }
 
-	public void setQuantidade(Float quantidade) {
-		this.quantidade = quantidade;
-	}
+    public void setCongelado(boolean congelado) {
+        this.congelado = congelado;
+    }
 
-	public String getMarca() {
-		return marca;
-	}
+    public Float getQuantidade() {
+        return quantidade;
+    }
 
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+    public void setQuantidade(Float quantidade) {
+        this.quantidade = quantidade;
+    }
 
-	@Override
-	public String toString() {
-		return String.format("%s - Congelado: %s - quantidade: %.2f - Marca: %s", super.toString(), congelado, quantidade, marca);
-	}
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s - Congelado: %s - quantidade: %.2f - Marca: %s", super.toString(), congelado, quantidade, marca);
+    }
 
 }
