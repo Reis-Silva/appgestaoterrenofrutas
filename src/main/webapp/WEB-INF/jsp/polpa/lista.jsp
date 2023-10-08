@@ -24,21 +24,21 @@
                         <th>Código</th>
                         <th>Congelado</th>
                         <th>Quantidade</th>
-                        <th>Marca</th>
+                        <th>Informacões</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach var="f" items="${listaPolpa}">
+                    <c:forEach var="p" items="${listaPolpa}">
                         <tr>
-                            <td>${f.id}</td>
-                            <td>${f.nome}</td>
-                            <td>${f.valor}</td>
-                            <td>${f.codigo}</td>
-                            <td>${f.congelado}</td>
-                            <td>${f.quantidade}</td>
-                            <td>${f.marca}</td>
-                            <td><a href="/polpa/${f.id}/excluir">excluir</a> </td>
+                            <td>${p.id}</td>
+                            <td>${p.descricao}</td>
+                            <td>${p.valor}</td>
+                            <td>${p.codigo}</td>
+                            <td>${p.congelado}</td>
+                            <td>${p.quantidade}</td>
+                            <td>${p.informacoes}</td>
+                            <td><a href="/polpa/excluir/${p.id}">Excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

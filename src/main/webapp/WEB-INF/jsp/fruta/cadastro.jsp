@@ -4,13 +4,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <title>AppPedido</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container mt-3">
-            <h2>Cadastramento de Bebidas</h2>
+            <h2>Cadastramento de Frutas</h2>
 
             <form action="/fruta/incluir" method="post">
 
@@ -18,17 +18,17 @@
 
                 <div class="mb-3 mt-3">
                     <label for="peso">Tamanho:</label>
-                    <input type="text" class="form-control" value="99" id="peso" placeholder="Entre com o Peso" name="tamanho">
+                    <input type="number" step="0.001" class="form-control" value="1" id="peso" placeholder="Entre com o Peso" name="peso" required>
                 </div>
 
                 <div class="form-check">
+                    <label class="form-check-label">Pacote</label>
                     <input class="form-check-input" type="checkbox" name="pacote" value="true" checked>
-                    <label class="form-check-label">Peso</label>
                 </div>
 
                 <div class="mb-3 mt-3">
-                    <label for="validade">Validade:</label>
-                    <input type="text" class="form-control" value="Validade" id="validade" placeholder="Entre com a Validade" name="marca">
+                    <label>Validade:</label>
+                    <input type="datetime-local" class="form-control" name="validade" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

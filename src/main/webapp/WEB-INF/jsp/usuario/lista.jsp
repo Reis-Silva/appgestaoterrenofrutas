@@ -31,7 +31,7 @@
                             <td>${u.email}</td>
                             <td>${u.senha}</td>
                             <td>${u.clientes.size()}</td>
-                            <td><a href="/usuario/${u.id}/excluir">excluir</a> </td>
+                            <td><a href="/usuario/excluir/${u.id}">Excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

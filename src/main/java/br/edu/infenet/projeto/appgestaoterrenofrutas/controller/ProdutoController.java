@@ -23,7 +23,7 @@ public class ProdutoController {
         return "produto/lista";
     }
 
-    @GetMapping(value = "/produto/{id}/excluir")
+    @GetMapping(value = "/produto/excluir/{id}")
     public String exclusao(@PathVariable Long id) {
 
         produtoService.excluir(id);

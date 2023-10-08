@@ -10,16 +10,16 @@ public class Polpa extends Produto {
 
     private Float quantidade;
 
-    private String marca;
+    private String informacoes;
 
     public Polpa() {
     }
 
-    public Polpa(boolean congelado, Float tamanho, String marca, String nome, Float valor, Long codigo) {
-        super(nome, valor, codigo);
+    public Polpa(boolean congelado, Float tamanho, String informacoes, String descricao, Float valor, Long codigo) {
+        super(descricao, valor, codigo);
         this.congelado = congelado;
         this.quantidade = tamanho;
-        this.marca = marca;
+        this.informacoes = informacoes;
     }
 
     public Polpa(Long id) {
@@ -42,17 +42,17 @@ public class Polpa extends Produto {
         this.quantidade = quantidade;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getInformacoes() {
+        return informacoes;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setInformacoes(String informacoes) {
+        this.informacoes = informacoes;
     }
 
     @Override
     public String toString() {
-        return String.format("%s - Congelado: %s - quantidade: %.2f - Marca: %s", super.toString(), congelado, quantidade, marca);
+        return String.format("%s - Congelado: %s - quantidade: %.2f - Marca: %s", super.toString(), congelado, quantidade, informacoes);
     }
 
 }

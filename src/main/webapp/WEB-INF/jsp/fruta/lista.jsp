@@ -32,13 +32,13 @@
                     <c:forEach var="f" items="${listaFruta}">
                         <tr>
                             <td>${f.id}</td>
-                            <td>${f.nome}</td>
+                            <td>${f.descricao}</td>
                             <td>${f.valor}</td>
                             <td>${f.codigo}</td>
                             <td>${f.peso}</td>
                             <td>${f.pacote}</td>
                             <td>${f.validade}</td>
-                            <td><a href="/fruta/${f.id}/excluir">excluir</a> </td>
+                            <td><a href="/fruta/excluir/${f.id}">Excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

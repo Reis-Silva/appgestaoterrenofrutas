@@ -17,8 +17,8 @@ public class Fruta extends Produto{
 	public Fruta() {
 	}
 	
-	public Fruta(Float peso, boolean pacote, LocalDateTime validade, String nome, Float valor, Long codigo) {
-		super(nome, valor, codigo);
+	public Fruta(Float peso, boolean pacote, LocalDateTime validade, String descricao, Float valor, Long codigo) {
+		super(descricao, valor, codigo);
 		this.peso = peso;
 		this.pacote = pacote;
 		this.validade = validade;

@@ -36,12 +36,18 @@ public class ClienteController {
 
         cliente.setUsuario(usuario);
 
+        Cliente ClienteExiste = clienteService.obterCliente(cliente.getCpf());
+
+        if (ClienteExiste != null){
+            throw new RuntimeException("Cliente Já Existe");
+        }
+
         clienteService.incluir(cliente);
 
         return "redirect:/cliente/lista";
     }
 
-    @GetMapping(value = "/cliente/{id}/excluir")
+    @GetMapping(value = "/cliente/excluir/{id}")
     public String excluir(@PathVariable Long id) {
 
         clienteService.excluir(id);

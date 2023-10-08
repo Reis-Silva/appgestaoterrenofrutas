@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <title>AppPedido</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
@@ -18,17 +18,17 @@
 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="congelado" value="true" checked>
-                    <label class="form-check-label">Gelada</label>
+                    <label class="form-check-label">Congelado</label>
                 </div>
 
                 <div class="mb-3 mt-3">
-                    <label for="quantidade">Tamanho:</label>
-                    <input type="text" class="form-control" value="99" id="quantidade" placeholder="Entre com a Quantidade" name="tamanho">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" step="0.001" class="form-control" value="1" id="quantidade" placeholder="Entre com a Quantidade" name="quantidade">
                 </div>
 
                 <div class="mb-3 mt-3">
-                    <label for="marca">Marca:</label>
-                    <input type="text" class="form-control" value="Marca" id="marca" placeholder="Entre com a sua Marca" name="marca">
+                    <label for="informacoes">Informações:</label>
+                    <input type="text" class="form-control" value="informacoes" id="informacoes" placeholder="Entre com a sua Informação" name="informacoes">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

@@ -11,4 +11,7 @@ import java.util.List;
 public interface ClienteRepository extends CrudRepository<Cliente, Long> {
     @Query("from Cliente c where c.usuario.id = :userid")
     public List<Cliente> obterLista(Long userid);
+
+    @Query("from Cliente c where c.cpf = :cpf")
+    public Cliente obterCliente(String cpf);
 }

@@ -22,7 +22,7 @@ public abstract class Produto {
     private List<Pedido> pedidos;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
     public Produto() {

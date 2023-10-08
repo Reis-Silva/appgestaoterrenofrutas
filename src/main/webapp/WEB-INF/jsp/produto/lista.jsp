@@ -32,7 +32,7 @@
                     <c:forEach var="f" items="${listaProduto}">
                         <tr>
                             <td>${f.id}</td>
-                            <td>${f.nome}</td>
+                            <td>${f.descricao}</td>
                             <td>${f.valor}</td>
                             <td>${f.codigo}</td>
                             <td>${f.pedidos.size()}</td>

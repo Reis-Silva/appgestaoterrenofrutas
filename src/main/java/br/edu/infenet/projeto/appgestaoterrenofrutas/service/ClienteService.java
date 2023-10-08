@@ -24,6 +24,11 @@ public class ClienteService {
         return (Collection<Cliente>) clienteRepository.obterLista(usuario.getId());
     }
 
+    public Cliente obterCliente(String cpf){
+
+        return clienteRepository.obterCliente(cpf);
+    }
+
     public void incluir(Cliente solicitante) {
 
         clienteRepository.save(solicitante);

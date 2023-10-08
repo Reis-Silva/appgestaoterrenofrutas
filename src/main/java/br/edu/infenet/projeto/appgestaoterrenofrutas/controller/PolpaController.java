@@ -41,7 +41,7 @@ public class PolpaController {
         return "redirect:/polpa/lista";
     }
 
-    @GetMapping(value = "/polpa/{id}/excluir")
+    @GetMapping(value = "/polpa/excluir/{id}")
     public String exclusao(@PathVariable Long id) {
 
         polpaService.excluir(id);

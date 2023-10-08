@@ -45,12 +45,18 @@ public class UsuarioController {
     @PostMapping(value = "/usuario/incluir")
     public String incluir(Usuario usuario) {
 
+        Usuario usuarioExiste = usuarioService.validar(usuario.getEmail(), usuario.getSenha());
+
+        if (usuarioExiste != null){
+            throw new RuntimeException("Usuario Já Existe");
+        }
+
         usuarioService.incluir(usuario);
 
         return "redirect:/";
     }
 
-    @GetMapping(value = "/usuario/{id}/excluir")
+    @GetMapping(value = "/usuario/excluir/{id}")
     public String excluir(@PathVariable Integer id) {
 
         usuarioService.excluir(id);

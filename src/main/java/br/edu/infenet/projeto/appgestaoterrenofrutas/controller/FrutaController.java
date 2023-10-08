@@ -41,7 +41,7 @@ public class FrutaController {
         return "redirect:/fruta/lista";
     }
 
-    @GetMapping(value = "/fruta/{id}/excluir")
+    @GetMapping(value = "/fruta/excluir/{id}")
     public String exclusao(@PathVariable Long id) {
 
         frutaService.excluir(id);

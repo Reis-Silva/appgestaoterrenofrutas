@@ -17,7 +17,7 @@ public class Cliente {
 
 	private String email;
 	@ManyToOne
-	@JoinColumn(name = "usuario_id")
+	@JoinColumn(name = "idUsuario")
 	private  Usuario usuario;
 	public Cliente() {
 	}

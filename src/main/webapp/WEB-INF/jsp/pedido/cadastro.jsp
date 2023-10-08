@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <title>Cadastramento de Pedidos</title>
     </head>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label>Data:</label>
-                    <input type="datetime-local" class="form-control" name="dtCliente">
+                    <input type="datetime-local" class="form-control" name="data">
                 </div>
                 <div class="form-group">
                     <label>Tipo:</label>

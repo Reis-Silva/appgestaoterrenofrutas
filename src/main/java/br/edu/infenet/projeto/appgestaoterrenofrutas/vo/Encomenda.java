@@ -17,8 +17,8 @@ public class Encomenda extends Produto{
 	public Encomenda() {
 	}
 
-	public Encomenda(Float quantidade, LocalDateTime dataPossivelEntrega, String informacoesExtras, String nome, Float valor, Long codigo) {
-		super(nome, valor, codigo);
+	public Encomenda(Float quantidade, LocalDateTime dataPossivelEntrega, String informacoesExtras, String descricao, Float valor, Long codigo) {
+		super(descricao, valor, codigo);
 		this.quantidade = quantidade;
 		this.dataPossivelEntrega = dataPossivelEntrega;
 		this.informacoesExtras = informacoesExtras;
@@ -35,7 +35,7 @@ public class Encomenda extends Produto{
 		this.quantidade = quantidade;
 	}
 
-	public LocalDateTime isDataPossivelEntrega() {
+	public LocalDateTime getDataPossivelEntrega() {
 		return dataPossivelEntrega;
 	}
 

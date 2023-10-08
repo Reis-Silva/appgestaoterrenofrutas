@@ -41,7 +41,7 @@ public class EncomendaController {
         return "redirect:/encomenda/lista";
     }
 
-    @GetMapping(value = "/encomenda/{id}/excluir")
+    @GetMapping(value = "/encomenda/excluir/{id}")
     public String exclusao(@PathVariable Long id) {
 
         encomendaService.excluir(id);

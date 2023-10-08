@@ -52,7 +52,7 @@ public class PedidoController {
         return "redirect:/pedido/lista";
     }
 
-    @GetMapping(value = "/pedido/{id}/excluir")
+    @GetMapping(value = "/pedido/excluir/{id}")
     public String excluir(@PathVariable Long id) {
 
         pedidoService.excluir(id);
