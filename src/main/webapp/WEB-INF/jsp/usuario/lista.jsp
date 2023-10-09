@@ -21,6 +21,7 @@
                         <th>Nome</th>
                         <th>E-mail</th>
                         <th>Senha</th>
+                        <th>Clientes</th>
                     </tr>
                 </thead>
                 <tbody>
