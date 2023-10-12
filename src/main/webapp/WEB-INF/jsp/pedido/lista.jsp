@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Descrição</th>
+                        <th>Informações</th>
                         <th>Data</th>
                         <th>Web</th>
                         <th>Solicitante</th>
@@ -31,11 +31,11 @@
                     <c:forEach var="p" items="${listaPedido}">
                         <tr>
                             <td>${p.id}</td>
-                            <td>${p.descricao}</td>
+                            <td>${p.informacao}</td>
                             <td>${p.data}</td>
                             <td>${p.web}</td>
-                            <td>${p.solicitante}</td>
-                            <td>${p.produtos}</td>
+                            <td>${p.cliente}</td>
+                            <td>${p.produtoList}</td>
                             <td><a href="/pedido/excluir/${p.id}">Excluir</a> </td>
                         </tr>
                     </c:forEach>

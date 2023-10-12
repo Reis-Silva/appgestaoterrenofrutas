@@ -21,7 +21,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
+                        <th>Descrição</th>
                         <th>Valor</th>
                         <th>Código</th>
                         <th>Pedidos</th>
@@ -36,7 +36,7 @@
                             <td>${f.valor}</td>
                             <td>${f.codigo}</td>
                             <td>${f.pedidos.size()}</td>
-                            <td><a href="/produto/${f.id}/excluir">excluir</a> </td>
+                            <td><a href="/produto/excluir/${f.id}">excluir</a> </td>
                         </tr>
                     </c:forEach>
                 </tbody>

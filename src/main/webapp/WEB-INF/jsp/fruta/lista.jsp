@@ -19,7 +19,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
+                        <th>Descrição</th>
                         <th>Valor</th>
                         <th>Código</th>
                         <th>Peso</th>

@@ -28,7 +28,7 @@ public class PedidoController {
     @GetMapping(value = "/pedido")
     public String telaCadastro(Model model, @SessionAttribute("user") Usuario usuario) {
 
-        model.addAttribute("solicitantes", clienteService.obterLista(usuario));
+        model.addAttribute("clientes", clienteService.obterLista(usuario));
 
         model.addAttribute("produtos", produtoService.obterLista(usuario));
 
@@ -37,7 +37,7 @@ public class PedidoController {
 
     @GetMapping(value = "/pedido/lista")
     public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
-        model.addAttribute("listagem", pedidoService.obterLista(usuario));
+        model.addAttribute("listaPedido", pedidoService.obterLista(usuario));
 
         return "pedido/lista";
     }

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java"  contentType="text/html; UTF-8" pageEncoding="utf-8" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,12 +15,12 @@
             <h2>Pedido</h2>
             <form action="/pedido/incluir" method="post">
                 <div class="form-group">
-                    <label>Descrição:</label>
-                    <input type="text" class="form-control" placeholder="Entre com a descrição" name="descricao">
+                    <label>InformaÃ§Ãµes:</label>
+                    <input type="text" class="form-control" placeholder="Entre com a descriÃ§Ã£o" name="informacao" required>
                 </div>
                 <div class="form-group">
                     <label>Data:</label>
-                    <input type="datetime-local" class="form-control" name="data">
+                    <input type="datetime-local" class="form-control" name="data" required>
                 </div>
                 <div class="form-group">
                     <label>Tipo:</label>
@@ -33,7 +34,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Solicitante:</label>
+                    <label>Cliente:</label>
                     <select name="cliente" class="form-control">
                         <c:forEach var="c" items="${clientes}">
                             <option value="${c.id}">${c.nome}</option>
@@ -44,8 +45,8 @@
                     <label>Produtos:</label>
                     <c:forEach var="p" items="${produtos}">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="produtos" value="${p.id}">
-                            <label class="form-check-label"> ${p.nome}</label>
+                            <input class="form-check-input" type="checkbox" name="produtos" value="${p.id}" >
+                            <label class="form-check-label"> ${p.descricao}</label>
                         </div>
                     </c:forEach>
                 </div>
